@@ -33,14 +33,14 @@ function App() {
         <thead className="table-head">
           <tr>
             <th>Type</th>
-            <th>Name</th>
+            <th colspan="4">Name</th>
             <th>Date</th>
             <th>Amount</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td></td>
+            <td colspan="4"></td>
             <td></td>
             <td></td>
             <td></td>

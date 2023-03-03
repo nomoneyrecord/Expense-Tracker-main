@@ -3,4 +3,16 @@ html {
 }
 
 .main-content {
+  display: center;
+}
+
+.main-table {
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+
+td, th {
+  border: 2px solid black;
+  padding: 0.5rem;
+  text-align: left;
 }
