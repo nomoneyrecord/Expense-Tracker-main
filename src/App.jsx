@@ -1,5 +1,4 @@
 import { useDebugValue, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return ( 
-    <form>
+   <div className="main-content">
       <h1 className="head">Simple Expense Tracker</h1>
       <h2 className="add-item">Add a new item:</h2>
         <label className="type-label">Type:
@@ -30,8 +29,25 @@ function App() {
         <button className="add-button">
           Add a new expense
         </button>
-      
-    </form>
+      <table className="main-table">
+        <thead className="table-head">
+          <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 )}
 
 export default App
