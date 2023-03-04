@@ -1,18 +1,41 @@
 html {
-  background-color: darkgreen;
+  background-color: rgb(112, 147, 112); 
+}
+
+.head {
+  margin: 30px;
+  font-weight: 800;
+}
+.add-item {
+  margin-bottom: 30px; 
 }
 
 .main-content {
-  display: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(112, 147, 112); 
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.type-lable, .lable-type {
+  display: inline-block;
 }
 
 .main-table {
   border-collapse: collapse;
   border: 2px solid black;
+  background-color: antiquewhite;
 }
 
 td, th {
   border: 2px solid black;
   padding: 0.5rem;
   text-align: left;
+  width:100px; 
+}
+
+.table-head {
+  background-color: darkgrey;
 }
