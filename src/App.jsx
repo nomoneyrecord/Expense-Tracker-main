@@ -43,17 +43,17 @@ function App() {
         <thead className="table-head">
           <tr>
             <th>Type</th>
-            <th colSpan="4">Name</th>
+            <th>Name</th>
             <th>Date</th>
             <th>Amount</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td className="Type"></td>
+            <td className="Name"></td>
+            <td className="Date"></td>
+            <td className="Amount"></td>
           </tr>
         </tbody>
       </table>
