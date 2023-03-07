@@ -6,8 +6,16 @@ html {
   margin: 30px;
   font-weight: 800;
 }
+
+.type-label {
+  margin-right: 28px; 
+}
 .add-item {
   margin-bottom: 30px; 
+}
+
+select.payment-type {
+  width: 93px;
 }
 
 .main-content {
@@ -19,16 +27,22 @@ html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.type-lable, .lable-type {
-  display: inline-block;
+.row2 {
+  margin-top: 40px;
 }
 
+.date {
+  margin-right:30px;
+}
+
+.amount {
+  width: 144px;
+}
 .main-table {
   margin-top: 20px;
   border-collapse: collapse;
   background-color: antiquewhite;
   border-radius: 5px;
-  
 }
 
 .add-button {
@@ -36,8 +50,9 @@ html {
   height: 60px;
   border-radius: 5px;
   color: rgb(159, 255, 208);
-  background-color: cornflowerblue;
+  background-color: rgb(91, 140, 230);
   font-weight: 900;
+  
 }
 
 td, th {
