@@ -40,7 +40,7 @@ function App() {
     </thead>
     <tbody>
       <tr>
-        <td colSpan="4"></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
