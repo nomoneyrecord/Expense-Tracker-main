@@ -52,7 +52,7 @@ select.payment-type {
   color: rgb(159, 255, 208);
   background-color: rgb(91, 140, 230);
   font-weight: 900;
-  
+  margin-left: 100px;
 }
 
 td, th {
