@@ -46,6 +46,7 @@ function App() {
             <th>Name</th>
             <th>Date</th>
             <th>Amount</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -54,6 +55,7 @@ function App() {
             <td className="Name"></td>
             <td className="Date"></td>
             <td className="Amount"></td>
+            <td className="Delete"></td>
           </tr>
         </tbody>
       </table>
