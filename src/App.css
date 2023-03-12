@@ -89,13 +89,23 @@ select.payment-type {
   width: 100%; 
 }
 
+.main-table td {
+  position: relative;
+  text-align: center;
+  }
+
 .delete-button {
   height: 30px;
   border-radius: 5px;
-  color: rgb(255, 159, 159);
-  background-color: rgb(215, 77, 3);
+  color: rgb(94, 5, 5);
+  background-color: rgb(255, 92, 5);
   font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 
 
 

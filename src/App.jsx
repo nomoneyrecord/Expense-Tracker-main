@@ -3,7 +3,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [expenses, setExpenses] = useState([]);
   const [showTable, setShowTable] = useState(false);
 
@@ -76,7 +75,7 @@ function App() {
             </thead>
             <tbody>
               {expenses.map((expense, index) => (
-                <tr key={index}>
+                <tr key={index} className="delete">
                   <td className="Type">{expense.type}</td>
                   <td className="Name">{expense.name}</td>
                   <td className="Date">{expense.date}</td>
