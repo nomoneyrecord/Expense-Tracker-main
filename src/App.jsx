@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [expenses, setExpenses] = useState([]);
   const [showTable, setShowTable] = useState(false);
+  
 
   const handleAddExpense = (event) => {
     event.preventDefault(); 
