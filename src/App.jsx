@@ -3,11 +3,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [count, setCount] = useState(1);
-  const [expenses, setExpenses] = useState([{ type: "cash" }]);
+  const [count, setCount] = useState(0);
+  const [expenses, setExpenses] = useState([]);
+  const [showTable, setShowTable] = useState(false);
 
   const handleAddExpense = (event) => {
-    event.preventDefault(); // prevent form submission
+    event.preventDefault(); 
 
     const type = event.target.form.elements.type.value;
     const name = event.target.form.elements.name.value;
@@ -15,7 +16,14 @@ function App() {
     const amount = event.target.form.elements.amount.value;
 
     const newExpense = { type, name, date, amount };
-    setExpenses([...expenses, newExpense]); // add new expense to the array
+    setExpenses([...expenses, newExpense]); 
+    setShowTable(true);
+  };
+
+  const handleDeleteExpense = (index) => {
+    const newExpenses = [...expenses];
+    newExpenses.splice(index, 1);
+    setExpenses(newExpenses);
   };
 
   return (
@@ -35,7 +43,7 @@ function App() {
           </label>
           <label className="name-label">
             Name:
-            <input type="text" name="name" className="expense" placeholder="What was it?" />
+            <input type="text" name="name" className="expense" placeholder="What was it?"/>
           </label>
         </div>
         <div className="row2">
@@ -54,30 +62,34 @@ function App() {
           </button>
         </div>
       </form>
-      <div className="main-table">
-        <table>
-          <thead className="table-head">
-            <tr>
-              <th>Type</th>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {expenses.map((expense, index) => (
-              <tr key={index}>
-                <td className="Type">{expense.type}</td>
-                <td className="Name">{expense.name}</td>
-                <td className="Date">{expense.date}</td>
-                <td className="Amount">{expense.amount}</td>
-                <td className="Delete" type="button">Delete</td>
+      {showTable && (
+        <div className="main-table">
+          <table>
+            <thead className="table-head">
+              <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Delete</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {expenses.map((expense, index) => (
+                <tr key={index}>
+                  <td className="Type">{expense.type}</td>
+                  <td className="Name">{expense.name}</td>
+                  <td className="Date">{expense.date}</td>
+                  <td className="Amount">{expense.amount}</td>
+                  <td className="Delete">
+                    <button className="delete-button" onClick={() => handleDeleteExpense(index)} position>X</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
