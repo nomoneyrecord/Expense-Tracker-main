@@ -13,36 +13,51 @@ function Form({ expense, handleAddExpense, handleChange }) {
             onChange={handleChange}
             value={expense.type}
           >
+            <option disabled>Select</option>
             <option value="cash">Cash</option>
             <option value="card">Card</option>
             <option value="crypto">Crypto</option>
             <option value="other">Other</option>
           </select>
 
-          <label className="name-label">
-            Name:
+          <label className="name-label">Name:</label>
             <input
               type="text"
               name="name"
+              id="name"
               className="expense"
               placeholder="What was it?"
+              onChange={handleChange}
+              value={expense.name}
+              required
             />
-          </label>
         </div>
+
         <div className="row2">
-          <label className="date-label">
-            Date:
-            <input type="date" name="date" className="date" />
-          </label>
-          <label className="amount-label">
-            Amount:
+          <label className="date-label">Date:</label>
+            <input 
+              type="date" 
+              name="date" 
+              id="date"
+              className="date"
+              onChange={handleChange}
+              value={expense.date}
+              required
+              />
+
+          <label className="amount-label">Amount:</label>
             <input
-              type="text"
+              type="number"
               name="amount"
+              id="amount"
               className="amount"
               placeholder="How much?"
+              onChange={handleChange}
+              value={expense.amount}
+              step=".01"
+              required
             />
-          </label>
+       
         </div>
         <div className="button">
           <button className="add-button" type="submit">
