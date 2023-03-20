@@ -1,23 +1,33 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './Components/Header';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
-  const [showTable, setShowTable] = useState(false);
+  const [expense, setExpense] = useState({
+    type: 'Select',
+    name: '',
+    date: '',
+    amount: '',
+  });
   
+  const handleChange = (e) => {
+    e.preventDefault();
+    setExpense({
+      ...expense,
+      [e.target.id]: e.target.value,
+    })
+  }
 
-  const handleAddExpense = (event) => {
-    event.preventDefault(); 
-
-    const type = event.target.form.elements.type.value;
-    const name = event.target.form.elements.name.value;
-    const date = event.target.form.elements.date.value;
-    const amount = event.target.form.elements.amount.value;
-
-    const newExpense = { type, name, date, amount };
-    setExpenses([...expenses, newExpense]); 
-    setShowTable(true);
+  const handleAddExpense = (e) => {
+    e.preventDefault(); 
+    if (expense.type === 'Select') {
+      alert ('Please select a payment type');
+      return;
+    };
+    setExpenses([...expenses, expense]); 
+    resetExpense();
   };
 
   const handleDeleteExpense = (index) => {
@@ -26,9 +36,18 @@ function App() {
     setExpenses(newExpenses);
   };
 
+  const resetExpense = () => {
+    setExpense({
+      type: 'Select',
+      name: '',
+      date: '',
+      amount: '',
+    });
+  }
+
   return (
     <div className="main-content">
-      <h1 className="head">Simple Expense Tracker</h1>
+      <Header />
       <h2 className="add-item">Add a new item:</h2>
       <form className="input-form">
         <div className="row1">
@@ -62,7 +81,6 @@ function App() {
           </button>
         </div>
       </form>
-      {showTable && (
         <div className="main-table">
           <table>
             <thead className="table-head">
@@ -89,7 +107,6 @@ function App() {
             </tbody>
           </table>
         </div>
-      )}
     </div>
   );
 }
